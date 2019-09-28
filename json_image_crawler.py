@@ -2,6 +2,7 @@ import json
 import re
 import sys
 import urllib.request
+import ig_query_parser
 
 import os
 from collections import OrderedDict
@@ -26,21 +27,25 @@ def get_image_tag(userName):
         # print(data)
         # print(len(data))
         # image URL은 해당 글스타그램 사진에 해당하는 url입니다.
-        image_num = 0
 
         #이미지 파일 정보에 대한 json 파일을 생성하는 부분입니다.
         out_json = os.path.join(path, userName + "_" + "image.json")
         with open(out_json, 'w+', encoding="utf-8") as make_file:
             list = []
             
-
+            image_cnt = 0
             for i in range(0, len(data)-1):
                 file_data = OrderedDict()
+                #key 값을 json data로 부터 받아서 오는 작업
+                key = ig_query_parser.get_ig_key(data[i]["key"])
+                # print("key : " + key)
                 if "img_urls" in data[i]:
+                    image_num = 0
                     image_list = data[i]["img_urls"]
                     file_list = []
                     for imageUrl in image_list:
-                        image_name = imageUrl + ".jpg"
+                        #image 이름을 만드는 부분입니다. key_0.jpg 형태로 image 파일이 생성됩니다
+                        image_name = key + "_" + str(image_num) + ".jpg"
                         #URL이 이미지 형태가 아닐경우 예외처리를 하는 구간입니다.
                         try:
                             download_image(imageUrl, path, image_name)
@@ -48,6 +53,8 @@ def get_image_tag(userName):
                             print("CANNOT DOWNLOAD FILE")
                             continue
                         file_list.append(image_name)
+                        image_num += 1
+                        image_cnt += 1
                     if not file_list:
                         continue
                     file_data["file_names"] = file_list
@@ -79,14 +86,15 @@ def get_image_tag(userName):
             #생성된 json list를 저장
             json.dump(list, make_file, ensure_ascii=False)
         
-        print("#USER : " + userName + "  " + str(image_num)+ " images downloaded!")
+        print("#USER : " + userName + "  " + str(image_cnt)+ " images downloaded!")
                 
 def download_image(url,path, name):
     print("download : " + url)
     if not os.path.isdir(path):
         os.makedirs(path)
-    filename = os.path.join(path, name)
-    urllib.request.urlretrieve(url, filename)
+
+    
+    urllib.request.urlretrieve(url, path +"/" +name)
     
 
 
