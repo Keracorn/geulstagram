@@ -7,7 +7,7 @@ import pandas as pd
 
 
 #you should change 1) credentials and 2) system environment variable in order to change into other account
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'credentials2.json' #specifying the location of credentials.
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'credentials.json' #specifying the location of credentials.
 client = vision.ImageAnnotatorClient() #fetching google vision api client
 
 # You can add other Google Vision's features, like face detection, over here.
@@ -20,7 +20,7 @@ features = [
 requests = []
 
 # inputting files here, as in forms of filename
-for filename in ['1_jpg','2_png','3_jpg']:
+for filename in ['1.jpg','2.png','3.jpg']:
     with io.open(filename, 'rb') as image_file:
         content = image_file.read() # reading the image content
     image = vision.types.Image(content=content)
