@@ -40,39 +40,15 @@ def detectText(img):
 FOLDER_PATH =r'C:/Users/khak1/OneDrive/바탕 화면/임시 컨트리/woojin_940205'
 file_list=os.listdir(FOLDER_PATH)
 
-tmp_content=list()
-content=list()
-file_data=OrderedDict()
+ID = dict()
 
-#for i in range(len(file_list)):
-for i in range(0, 5):
+#for i in range(len(file_list)): 실제 데이터 생성용
+#for i in range(0,5): test용
     try :
-        temp=detectText(os.path.join(FOLDER_PATH,file_list[i]))
-        tmp_content.append(temp)
+        content=detectText(os.path.join(FOLDER_PATH,file_list[i]))
+        ID[i]=file_list[i], content
     except IndexError:
         continue
 
-#for i in range(len(tmp_content)):
-#    content.append(tmp_content[i].split())
-
-#for i in range(len(content)):
-#    tmp_hash=list()
-#    for j in range(len(content[i])):
-#        if j<len(content[i]):
-#            if "#" in content[i][j]:
-#                tmp_hash.append(content[i][j])
-#                del content[i][j]
-#        file_data[str(i+1)+" hash"]=tmp_hash
-#    file_data[i+1]=content[i]
-for i in range(len(tmp_content)):
-    tmp_hash=list()
-    for j in range(len(tmp_content[i])):
-        if j<len(tmp_content[i]):
-            if "#" in tmp_content[i][j]:
-                tmp_hash.append(tmp_content[i][j])
-                del tmp_content[i][j]
-            file_data[str(i+1)+" hash"]=tmp_hash
-        file_data[i+1]=tmp_content[i]
-
 with open("woojin_940205.json",'w',encoding="utf-8") as make_file:
-          json.dump(file_data, make_file, ensure_ascii=False, indent="\t")
+          json.dump(ID, make_file, ensure_ascii=False, indent="\t")
