@@ -1,11 +1,9 @@
-from pandas.io.json import json_normalize
 import csv, json
-import numpy as np
 
-Input = open("woojin_940205.json",'r',encoding="UTF-8")
+Input = open("kim_hanwoong.json",'rt', encoding='utf-8')
 data=json.load(Input)
 
-Output=open("woojin_940205.csv", 'w',encoding="euc_kr", newline='')
+Output=open("kim_hanwoong.csv", 'w',newline='', encoding='utf-8-sig')
 
 csvwriter=csv.writer(Output)
 
