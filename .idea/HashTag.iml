@@ -2,7 +2,7 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.7.2 (C:\Users\pc\AppData\Local\Programs\Python\Python37\python.exe)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (KerasHashTag)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">
