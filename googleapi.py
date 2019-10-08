@@ -1,19 +1,15 @@
-import os, io
+import os
+import io
 from google.cloud import vision
-from google.cloud.vision import types
 import pandas as pd
 import json
 import csv
-from collections import OrderedDict
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'credentials.json'
 
 client = vision.ImageAnnotatorClient()
 
-# print(dir(client))
-
-client = vision.ImageAnnotatorClient()
-
+# OCR 작동 부분
 def detectText(img):
 
     with io.open(img, 'rb') as image_file:
@@ -38,15 +34,15 @@ def detectText(img):
     print(df['description'][0])
     return df['description'][0]
 
-
+# 이미지 들어있는 폴더 넣기
 def textToJsonToCsv(FOLDER_PATH):
     file_list = os.listdir(FOLDER_PATH)
     User_name = os.path.basename(FOLDER_PATH)
 
     ID = dict()
 
-#    for i in range(len(file_list)): #실제 데이터 생성용
-    for i in range(0,2): #test용
+    for i in range(len(file_list)): #실제 데이터 생성용
+#    for i in range(0,2): #test용
         try :
             content = detectText(os.path.join(FOLDER_PATH,file_list[i]))
             ID[i]=file_list[i], content
@@ -57,7 +53,7 @@ def textToJsonToCsv(FOLDER_PATH):
     with open(User_name + ".json",'w',encoding="utf-8") as make_file:
               json.dump(ID, make_file, ensure_ascii=False, indent="\t")
 
-    #### Json to CSV
+    # Json to CSV
     Input = open(User_name + ".json",'rt', encoding='utf-8')
     json_data = json.load(Input)
 
@@ -79,6 +75,9 @@ def textToJsonToCsv(FOLDER_PATH):
 
     Output.close()
 
-
-textToJsonToCsv(r'C:\Users\Ajou\Downloads\User_Images\s')
-
+# 유저 폴더 묶인 상위 폴더
+user_list = os.listdir(r'C:\Users\Ajou\Downloads\User_Images/')
+print(user_list)
+for i in user_list:
+    textToJsonToCsv(r'C:\Users\Ajou\Downloads\User_Images/' + i )
+    print(i,"완료")
