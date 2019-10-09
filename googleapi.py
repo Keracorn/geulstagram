@@ -1,18 +1,15 @@
-import os, io
+import os
+import io
 from google.cloud import vision
-from google.cloud.vision import types
 import pandas as pd
 import json
-from collections import OrderedDict
+import csv
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'credentials.json'
 
 client = vision.ImageAnnotatorClient()
 
-# print(dir(client))
-
-client = vision.ImageAnnotatorClient()
-
+# OCR 작동 부분
 def detectText(img):
 
     with io.open(img, 'rb') as image_file:
@@ -37,42 +34,50 @@ def detectText(img):
     print(df['description'][0])
     return df['description'][0]
 
-FOLDER_PATH =r'C:/Users/khak1/OneDrive/바탕 화면/임시 컨트리/woojin_940205'
-file_list=os.listdir(FOLDER_PATH)
+# 이미지 들어있는 폴더 넣기
+def textToJsonToCsv(FOLDER_PATH):
+    file_list = os.listdir(FOLDER_PATH)
+    User_name = os.path.basename(FOLDER_PATH)
 
-tmp_content=list()
-content=list()
-file_data=OrderedDict()
+    ID = dict()
 
-#for i in range(len(file_list)):
-for i in range(0, 5):
-    try :
-        temp=detectText(os.path.join(FOLDER_PATH,file_list[i]))
-        tmp_content.append(temp)
-    except IndexError:
-        continue
+    for i in range(len(file_list)): #실제 데이터 생성용
+#    for i in range(0,2): #test용
+        try :
+            content = detectText(os.path.join(FOLDER_PATH,file_list[i]))
+            ID[i]=file_list[i], content
+        except IndexError:
+            continue
 
-#for i in range(len(tmp_content)):
-#    content.append(tmp_content[i].split())
+    # save as json
+    with open(User_name + ".json",'w',encoding="utf-8") as make_file:
+              json.dump(ID, make_file, ensure_ascii=False, indent="\t")
 
-#for i in range(len(content)):
-#    tmp_hash=list()
-#    for j in range(len(content[i])):
-#        if j<len(content[i]):
-#            if "#" in content[i][j]:
-#                tmp_hash.append(content[i][j])
-#                del content[i][j]
-#        file_data[str(i+1)+" hash"]=tmp_hash
-#    file_data[i+1]=content[i]
-for i in range(len(tmp_content)):
-    tmp_hash=list()
-    for j in range(len(tmp_content[i])):
-        if j<len(tmp_content[i]):
-            if "#" in tmp_content[i][j]:
-                tmp_hash.append(tmp_content[i][j])
-                del tmp_content[i][j]
-            file_data[str(i+1)+" hash"]=tmp_hash
-        file_data[i+1]=tmp_content[i]
+    # Json to CSV
+    Input = open(User_name + ".json",'rt', encoding='utf-8')
+    json_data = json.load(Input)
 
-with open("woojin_940205.json",'w',encoding="utf-8") as make_file:
-          json.dump(file_data, make_file, ensure_ascii=False, indent="\t")
+    Output=open(User_name + ".csv", 'w',newline='', encoding='utf-8-sig')
+
+    csvwriter = csv.writer(Output)
+
+    content = list(json_data.values())
+
+    header = ["게시글 id", "이미지 본문"]
+    csvwriter.writerow(header)
+
+    for i in range(len(content)):
+        for j in range(len(content[i])):
+            content[i][j] = content[i][j].replace("\n", " ")
+
+    for i in range(len(content)):
+        csvwriter.writerow(content[i])
+
+    Output.close()
+
+# 유저 폴더 묶인 상위 폴더
+user_list = os.listdir(r'C:\Users\Ajou\Downloads\User_Images/')
+print(user_list)
+for i in user_list:
+    textToJsonToCsv(r'C:\Users\Ajou\Downloads\User_Images/' + i )
+    print(i,"완료")
