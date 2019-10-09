@@ -236,6 +236,12 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python._human_parsing" />
+      <item itemvalue="Python.corpus_generator" />
+      <item itemvalue="Python.ig_query_parser" />
+      <item itemvalue="Python.url_parser" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.corpus_generator" />

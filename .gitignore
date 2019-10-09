@@ -1,2 +1,5 @@
 *.json
 *.csv
+.idea
+.xml
+.iws
