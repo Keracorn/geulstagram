@@ -10,38 +10,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1657883004">
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="csv" value="1" />
-          <entry key="gitignore" value="1" />
-          <entry key="ipynb" value="1" />
-          <entry key="json" value="1" />
-          <entry key="py" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CSV" value="1" />
-          <entry key="IPNB" value="1" />
-          <entry key="JSON" value="1" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="py" value="756" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Python" value="756" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
@@ -220,10 +188,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.ig_query_parser" />
-      <item itemvalue="Python.url_parser" />
       <item itemvalue="Python.googleapi" />
+      <item itemvalue="Python.ig_query_parser" />
       <item itemvalue="Python.json2csv" />
+      <item itemvalue="Python.url_parser" />
     </list>
     <recent_temporary>
       <list>
