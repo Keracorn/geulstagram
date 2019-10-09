@@ -1,6 +1,6 @@
 .idea
 *.json
 *.csv
+*.iws
 *.xml
-*.iml
 .idea
