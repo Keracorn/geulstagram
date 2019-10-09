@@ -1,7 +1,5 @@
 .idea
 *.json
 *.csv
-.idea
-.xml
-.iws
-.idea/workspace.xml
+*.iws
+*.xml
