@@ -5,7 +5,7 @@ import re
 # 해시태그가 본문에 달린 경우
 
 def get_tag_body(userName):
-    file_name = userName+".json"
+    file_name = "_2_IG_HASHTAG/"+ userName+".json"
     with open(file_name,'r',encoding="UTF8") as data_file:
         data = json.load(data_file)
         # print(data)
@@ -18,11 +18,12 @@ def get_tag_body(userName):
         tag_containing_txt = data[0]["caption"]
         tag_list = re.findall(r"#(\w+)", tag_containing_txt)
         print(tag_list)
+    return tag_list
 
-# get_tag_body("ajaegeul")
+# get_tag_body("1day1poem")
 
 def get_tag_comment(userName):
-    file_name = userName+".json"
+    file_name = "_2_IG_HASHTAG/" + userName+".json"
     with open(file_name,'r',encoding="UTF8") as data_file:
         data = json.load(data_file)
         # print(data)

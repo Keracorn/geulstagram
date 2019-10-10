@@ -1,1 +1,6 @@
+.idea
 *.json
+*.csv
+*.iws
+*.xml
+.idea
