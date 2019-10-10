@@ -5,7 +5,7 @@ import pandas as pd
 import json
 import csv
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'credentials.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'snoop2head@gmail.com.json'
 
 client = vision.ImageAnnotatorClient()
 
@@ -76,8 +76,11 @@ def textToJsonToCsv(FOLDER_PATH):
     Output.close()
 
 # 유저 폴더 묶인 상위 폴더
-user_list = os.listdir(r'C:\Users\Ajou\Downloads\User_Images/')
+user_list = os.listdir(r'C:\Users\Ajou\Downloads\User_Images_2/')
 print(user_list)
+cnt = 0
 for i in user_list:
-    textToJsonToCsv(r'C:\Users\Ajou\Downloads\User_Images/' + i )
+    cnt += 1
+    textToJsonToCsv(r'C:\Users\Ajou\Downloads\User_Images_2/' + i )
+    print(cnt)
     print(i,"완료")
