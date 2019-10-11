@@ -1,4 +1,6 @@
+__pycache__/
 *.json
 .idea
 *.csv
 *.pyc
+.chatbot_test.py
