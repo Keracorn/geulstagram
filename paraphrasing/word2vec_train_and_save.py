@@ -91,10 +91,10 @@ if __name__ == '__main__':
 
     config = {
         'min_count': 2,  # 등장 횟수가 2 이하인 단어는 무시
-        'size': 200,  # 200차원짜리 벡터스페이스에 embedding
+        'size': 300,  # n차원짜리 벡터스페이스에 embedding
         'sg': 1,  # 0이면 CBOW, 1이면 skip-gram을 사용한다
         'batch_words': 10000,  # 사전을 구축할때 한번에 읽을 단어 수
-        'iter': 100,  # 보통 딥러닝에서 말하는 epoch과 비슷한, 반복 횟수
+        'iter': 1000,  # 보통 딥러닝에서 말하는 epoch과 비슷한, 반복 횟수
         'workers': 4, #cpu thread
     }
 
