@@ -7,7 +7,7 @@ import json
 import re
 from chatbotmodel import get_token
 import chatbotmodel
-#from translate1 import translate_word
+from translateAPI import translate_word
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'credentials2.json'
 
@@ -27,11 +27,17 @@ def get_message(bot, update) :
         ingamsung.stop()
     else:
         #receiving message and complying automatically
-
         user_input_text = update.message.text
+        msg_id = update.message.message_id
         chat_id = update.message.chat.id
+        print(chat_id)
     
         tag_list = re.findall(r"#(\w+)", user_input_text)
+        print(tag_list)
+
+        f = open('tag.txt', 'w')
+        f.write(str(tag_list[0]))
+        f.close()
         
         if len(tag_list) == 0:
             update.message.reply_text("아무런 태그를 주지 않으셨어요 ㅠㅠ")
@@ -42,7 +48,7 @@ def get_message(bot, update) :
 
             reply_markup = InlineKeyboardMarkup(keyboard)
 
-            bot.send_message(chat_id,'Please choose:', reply_markup=reply_markup)
+            bot.send_message(chat_id, 'Please choose:', reply_markup=reply_markup)
 
             #update.message.reply_text("예, : " + str(tag_list) + "를 갖고 글을 써보겠습니다!")
 #bot.sendMessage(chat_id, "글은 한 번 써보았습니다!")
@@ -52,14 +58,13 @@ def get_message(bot, update) :
 def callback_set(bot, update):
     query = update.callback_query
     data_selected = update.callback_query.data
-    user_input_text = update.message.text
-    tag_list = re.findall(r"#(\w+)", user_input_text)
-    print(tag_list)
-
+    
+    #bot.sendMessage(chat_id, "글은 한 번 써보았습니다!")
     if(data_selected == "1"):
-        print(word)
-        #translated_word = translate_word(str(tag_list))
-        query.edit_message_text(text="Selected option: {}".format(query.data))
+        print("call")
+        translated = translate_word()
+        query.edit_message_text(text=translated)
+    
     else:
         print("2")
 

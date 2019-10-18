@@ -7,10 +7,12 @@ from google.cloud import translate
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'credentials2.json'
 
-def translate_word(text):
+def translate_word():
     # Instantiates a client
     translate_client = translate.Client()
 
+    f = open('tag.txt', 'r')
+    text = f.readline()
     # The text to translate
     #text = u'Hello, world!'
     #text = input(u"번역할 글을 입력해주세요: ")
@@ -46,3 +48,4 @@ def translate_word(text):
     #print(u'Text: {}'.format(text2))
     #print(u'Translation: {}'.format(translated_word))
     #print(u'Checked: {}'.format(spellcheck(translated_word)))
+
