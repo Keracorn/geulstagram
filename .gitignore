@@ -8,3 +8,4 @@ __pycache__/
 =======
 /.idea
 >>>>>>> Stashed changes
+*.model
