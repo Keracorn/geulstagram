@@ -8,3 +8,4 @@ __pycache__/
 =======
 >>>>>>> Stashed changes
 *.model
+.DS_Store
