@@ -1,11 +1,10 @@
 __pycache__/
 *.json
 <<<<<<< Updated upstream
-.idea
+.idea/
 *.csv
 *.pyc
 .chatbot_test.py
 =======
-/.idea
 >>>>>>> Stashed changes
 *.model
