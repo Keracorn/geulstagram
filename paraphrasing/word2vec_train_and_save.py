@@ -100,5 +100,5 @@ if __name__ == '__main__':
 
     print('word2vec 모델 만들기 학습하기')
     model = word2vec.Word2Vec(data_tokens, **config)  # skip-gram model
-    model.save("Synonym/gamsung_txt.model")
+    model.save("paraphrasing/gamsung_txt.model")
     print('word2vec 모델 저장 완료')

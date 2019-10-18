@@ -41,7 +41,7 @@ def change_word(txt):
 if __name__ == '__main__':
     print("데이터 및 모델 불러오기")
     data = load_data('Final_Data_v2_Cleansing_v2_spell_checked.csv')
-    word2vecModel = word2vec.Word2Vec.load("Synonym/gamsung_txt.model")  # 저장한 워드투벡 모델 불러오기
+    word2vecModel = word2vec.Word2Vec.load("paraphrasing/gamsung_txt.model")  # 저장한 워드투벡 모델 불러오기
     print("불러오기 완료")
     print("텍스트 변형 적용")
     data['Change_word_2_sim'] = data['Spell_Checked_Content'].apply(change_word)
