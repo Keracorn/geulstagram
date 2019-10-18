@@ -5,7 +5,7 @@ __pycache__/
 *.csv
 *.pyc
 .chatbot_test.py
-=======
->>>>>>> Stashed changes
 *.model
 .DS_Store
+=======
+>>>>>>> Stashed changes
