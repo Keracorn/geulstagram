@@ -75,7 +75,7 @@ https://github.com/ssut/py-hanspell
         |코드|설명|
         |:--------:|:--------:|
         |word2vec_train_and_save.py|사용자의 데이터를 학습해서 Word2Vec 모델로 반환해주는 코드|
-        |change_synonym.py|생성한 word2vec model로부터 단어마다 `most_simlilar` 메소드를 통해 가장 유사한 단어를 받아낸다. 유사어를 문장 내 모든 명사에 적용시켜 문장을 변형해주는 코드|
+        |change_synonym.py|Word2vec 모델을 이용해 받아낸 단어 별 유의어를 문장 내 모든 명사에 적용시켜 문장을 변형해주는 코드|
 
 
 
