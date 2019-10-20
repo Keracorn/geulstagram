@@ -51,7 +51,7 @@
 * 유저가 쓴 글마다 유저의 필명 등이 서명처럼 들어가있습니다. 글의 앞부분이나 뒷부분에서 한 유저당 동일한 어절이 유저당 게시글의 50% 이상일 시 제거 처리해주었습니다. 서명이 두 어절 이상인 경우도 있어, 제거 요소가 나오지 않을 때까지 반복 처리해주었습니다.
 * 동일한 해시태그가 모든 글에 반복적으로 등장하는 경우가 잦았습니다. 모든 유저의 해시태그 데이터를 카운트해 빈도수 1회이거나 최다 빈출 3개 이상인 태그는 제거해주었습니다.
 * 맞춤법이 틀린 글은 검사하여 수정해주는 작업을 거쳤습니다. 
-https://github.com/ssut/py-hanspell/blob/master/README.md
+https://github.com/ssut/py-hanspell
 해당 맞춤법 검사기를 이용하여 추출된 이미지 텍스트의 맞춤법을 검사
 맞춤법 검사는 py-hanspell 내부적으로 네이버 맞춤법 검사기를 사용
 
@@ -74,10 +74,9 @@ https://github.com/ssut/py-hanspell/blob/master/README.md
 
         |코드|설명|
         |:--------:|:--------:|
-        |change_synonym.py|설명|
-        |word2vec_train_and_save.py|설명|
+        |word2vec_train_and_save.py|사용자의 데이터를 학습해서 Word2Vec 모델로 반환해주는 코드|
+        |change_synonym.py|생성한 word2vec model로부터 단어마다 `most_simlilar` 메소드를 통해 가장 유사한 단어를 받아낸다. 유사어를 문장 내 모든 명사에 적용시켜 문장을 변형해주는 코드|
 
-word2vec_train_and_save.py
 
 
 ## 참고 문헌
