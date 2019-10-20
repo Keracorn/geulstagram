@@ -14,12 +14,12 @@
 
 
  ### 프로젝트 해시태그 구성원
- *	__Mento__ 
-    *	__김슬기 멘토님__ 
 *	__Mentee__ 
     *	__김우정__ [아주대학교 컴퓨터공학과 대학원생  _gks3284@ajou.ac.kr_]
     *	__이름__ [간단한 소개 _메일_]	
-
+ *	__Mento__ 
+    *	__김슬기 멘토님__ 
+    
 ---
 ## 프로젝트 진행 과정
 
@@ -77,8 +77,6 @@ https://github.com/ssut/py-hanspell
         |word2vec_train_and_save.py|사용자의 데이터를 학습해서 Word2Vec 모델로 반환해주는 코드|
         |change_synonym.py|Word2vec 모델을 이용해 받아낸 단어 별 유의어를 문장 내 모든 명사에 적용시켜 문장을 변형해주는 코드|
 
-
-
 ## 참고 문헌
 
 ## 참고 문헌
@@ -87,14 +85,12 @@ https://github.com/ssut/py-hanspell
     * 딥 러닝을 이용한 자연어 처리 입문: <https://wikidocs.net/book/2155>
     * 쉽게 씌어진 Word2Vec: <https://dreamgonfly.github.io/machine/learning,/natural/language/processing/2017/08/16/word2vec_explained.html>
 
-
 * 데이터 수집:
     * instagram-crawler: <https://github.com/huaying/instagram-crawler>
     * Vision API Tutorial: <https://www.evernote.com/l/AZQhDK3EG1dPlYYGM7nz--qf_IpgswSIbQw/>
 
 * 데이터 전처리
     * han-spell: <https://github.com/ssut/py-hanspell/blob/master/README.md>
-
 
 * 모델링
     * gpt-2: <https://github.com/nshepperd/gpt-2>
