@@ -13,7 +13,7 @@
 형태소 분석기 : Konlpy <br>
 
 
- ### 프로젝트 해시태그 구성원
+### 프로젝트 해시태그 구성원
 *	__Mentee__ 
     *	__김우정__ [아주대학교 컴퓨터공학과 대학원생  _gks3284@ajou.ac.kr_]
     * __배현진__ [숙명여자대학교 IT공학전공 재학 _gloria9705@sookmyung.ac.kr_]
@@ -75,7 +75,6 @@ hanspell: https://github.com/ssut/py-hanspell/blob/master/README.md<br>
  * **word2vec_train_and_save.py**
  : Word2vec 모델을 이용해 받아낸 단어 별 유의어를 문장 내 모든 명사에 적용시켜 문장을 변형해주는 코드
  
-
 ## 참고 문헌
 
 **NLP**
