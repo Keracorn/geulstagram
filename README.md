@@ -58,12 +58,12 @@ hanspell: https://github.com/ssut/py-hanspell/blob/master/README.md<br>
 
 
 ### 모델 생성
-* Modeling
-* RNN, Seq2Seq 자료조사
-* GPT-2를 이용한 생성 모델 학습 진행 중
-* 데이터 변형 
-* Translation (한글 →  다른 나라 언어 →  한글)
-* Google Translation API 이용
+**Modeling**
+ * RNN, Seq2Seq 자료조사
+ * GPT-2를 이용한 생성 모델 학습 진행 중
+**데이터 변형**
+ * Translation (한글 →  다른 나라 언어 →  한글)
+ * Google Translation API 이용
 
 |코드|설명|
 |:--------:|:--------:|
@@ -80,19 +80,18 @@ hanspell: https://github.com/ssut/py-hanspell/blob/master/README.md<br>
 
 ## 참고 문헌
 
-* NLP:
+**NLP**
 * BERT 세미나 자료: <https://www.slideshare.net/WonIkCho/1909-bert-whyandhow-code-seminar>
 * 딥 러닝을 이용한 자연어 처리 입문: <https://wikidocs.net/book/2155>
 * 쉽게 씌어진 Word2Vec: <https://dreamgonfly.github.io/machine/learning,/natural/language/processing/2017/08/16/word2vec_explained.html>
 
-
-* 데이터 수집:
+**데이터 수집**
 * instagram-crawler: <https://github.com/huaying/instagram-crawler>
 * Vision API Tutorial: <https://www.evernote.com/l/AZQhDK3EG1dPlYYGM7nz--qf_IpgswSIbQw/>
 
-* 데이터 전처리
+**데이터 전처리**
 * han-spell: <https://github.com/ssut/py-hanspell/blob/master/README.md>
 
-* 모델링
+**모델링**
 * gpt-2: <https://github.com/nshepperd/gpt-2>
 * gpt-2 colab: <https://colab.research.google.com/github/ilopezfr/gpt-2/blob/master/gpt-2-playground_.ipynb?fbclid=IwAR21GZFZ2gWHFwZmWss5osQpxDRuZOQsx_RXdvSbBWbyTYBogYru9bRB6qY#scrollTo=_QIdaQn5WkSf>
