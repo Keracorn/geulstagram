@@ -58,19 +58,21 @@ hanspell: https://github.com/ssut/py-hanspell/blob/master/README.md<br>
 
 
 ### 모델 생성
+
 **Modeling**
  * RNN, Seq2Seq 자료조사
  * GPT-2를 이용한 생성 모델 학습 진행 중
+ 
 **데이터 변형**
  * Translation (한글 →  다른 나라 언어 →  한글)
- * Google Translation API 이용
+  * Google Translation API 이용
 
 |코드|설명|
 |:--------:|:--------:|
 |translateAPU.py|입력된 글을 영어로 번역한 뒤 한국어로 다시 번역해주는 코드|
 
 
-* 명사 유의어로 변경하기 
+ * 명사 유의어로 변경하기 
     * Word2Vec
 
 |코드|설명|
