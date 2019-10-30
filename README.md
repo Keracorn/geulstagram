@@ -18,6 +18,7 @@
     *	__김우정__ [아주대학교 컴퓨터공학과 대학원생  _gks3284@ajou.ac.kr_]
     * __배현진__ [숙명여자대학교 IT공학전공 재학 _gloria9705@sookmyung.ac.kr_]
     * __안영진__ [연세대학교 Economics 학부생 young_ahn@yonsei.ac.kr]    
+    * __이름__ [간단한 소개 / 이메일]    
  *	__Mento__ 
     *	__김슬기 멘토님__ 
     
