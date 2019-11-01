@@ -7,15 +7,17 @@ import json
 import re
 from chatbotmodel import get_token
 import chatbotmodel
-from translateAPI import translate_word
+from translateAPI import translate_word_eng, translate_word_kor
+from search import search
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'credentials2.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'key.json'
 
 
 bot_token = get_token()
 
 ingamsung = telegram.Bot(token = bot_token)
 updates = ingamsung.getUpdates()
+count = 1
 
 # message reply function
 # update is json format
@@ -58,15 +60,29 @@ def get_message(bot, update) :
 def callback_set(bot, update):
     query = update.callback_query
     data_selected = update.callback_query.data
-    
+
     #bot.sendMessage(chat_id, "글은 한 번 써보았습니다!")
     if(data_selected == "1"):
-        print("call")
-        translated = translate_word()
+        print("1")
+        f = open('tag.txt', 'r')
+        text = f.readline()
+        translated = translate_word(text)
+        print(translated)
         query.edit_message_text(text=translated)
     
-    else:
+    if(data_selected == "2"):
+        from gptModel import gpt
+
         print("2")
+        input_sentence = search()
+        print(input_sentence)
+        translated = translate_word_eng(input_sentence)
+        print(translated)
+        learned_sentence = gpt(translated)
+        result = translate_word_kor(learned_sentence[0])
+        print(result)
+        query.edit_message_text(text=result)
+
 
 #bot.editMessageText(chat_id=chat_id, text="Selected option: {}".format(query.data))
 
