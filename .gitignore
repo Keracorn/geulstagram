@@ -7,5 +7,6 @@ __pycache__/
 .chatbot_test.py
 *.model
 .DS_Store
+checkpoint/
 =======
 >>>>>>> Stashed changes
