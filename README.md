@@ -28,6 +28,9 @@
 ### 데이터셋 수집 
 인플루엔서 리스트업 / 인스타 그램 게시글 크롤링 / 이미지 다운 으로 데이터셋을 수집하였습니다.
 
+instagram crawler:
+https://github.com/huaying/instagram-crawler
+
 1. [게시글 작성자, 게시글 사진(jpg/png), 게시글 본문(string), 해시태그, 게시글 댓글] 정보를 담고 있는 json 파일을 생성
 2. 해당 json 이미지 파일을 다운하고 Google Vision API를 사용하여 이미지 별 텍스트 추출
 3. 최종 데이터 통합 (인스타그램 crawling 데이터 + 이미지로부터 OCR을 이용해 추출한 글 텍스트)
