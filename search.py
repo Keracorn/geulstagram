@@ -16,12 +16,16 @@ def search():
         if hashtag in text:
             list.append(df['ID'][i])
 
-    randomnum = random.randrange(1, list[-1])
-    index = randomnum % len(list)
-
+    randomnum = random.randint(0, len(list))
+    print(randomnum)
+    index = list[randomnum]
+    print(index)
     sentence = df['Spell_Checked_Content'][index]
 
     f.close()
 
     return sentence
+
+sentence = search()
+print(sentence)
 
