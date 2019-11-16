@@ -60,6 +60,9 @@ hanspell: https://github.com/ssut/py-hanspell/blob/master/README.md<br>
 
 ### 모델 생성
 
+gpt2 colab
+https://colab.research.google.com/drive/1VLG8e7YSEwypxU-noRNhsv5dW4NfTGce
+
 **Modeling**
  * RNN, Seq2Seq 자료조사
  * GPT-2를 이용한 생성 모델 학습 진행 중
