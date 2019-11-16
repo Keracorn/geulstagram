@@ -12,11 +12,11 @@ def gpt(sentence):
               prefix=sentence,
               truncate='<|endoftext|>')
     print("generate")
-    gpt2.close()
-    print("close")
+    sess.close()
 
     return sentence
 
+gpt("hi")
 
 
 
