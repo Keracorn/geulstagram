@@ -99,3 +99,7 @@ https://colab.research.google.com/drive/1VLG8e7YSEwypxU-noRNhsv5dW4NfTGce
 **모델링**
 * gpt-2: <https://github.com/nshepperd/gpt-2>
 * gpt-2 colab: <https://colab.research.google.com/github/ilopezfr/gpt-2/blob/master/gpt-2-playground_.ipynb?fbclid=IwAR21GZFZ2gWHFwZmWss5osQpxDRuZOQsx_RXdvSbBWbyTYBogYru9bRB6qY#scrollTo=_QIdaQn5WkSf>
+---
+### Prize
+2020 인공지능 데이터셋 경진대회 `인스타갬성터짐` 팀, **3등** 수상   
+주관 : 셀렉트스타 
