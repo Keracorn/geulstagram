@@ -3,10 +3,12 @@
 ## HashTagBot 소개
 2019년 케라스 공개 SW 컨트리뷰톤 프로젝트 중 하나인 `케라스 기반 챗봇 만들기`에 참가하여 **해시태그 기반으로 글을 생성해주는 챗봇**을 만들었습니다.
 
+[발표자료와 상세 내용은 README.pdf에서 참고하실 수 있습니다.](./README.pdf)
+
 ### 주요 기능
  * 챗봇에 해시태그를 적으면 사전에 수집한 데이터셋에서 랜덤으로 문장들을 뽑아줍니다.
  * 뽑힌 문장들은 번역 / 모델 등을 거쳐 새로운 문장으로 변형되어 챗봇의 아웃풋 값으로 반환됩니다.
- 
+
 ### 개발 환경
 개발 언어 : python <br>
 모델 프레임 워크 : Keras  <br>
@@ -66,7 +68,7 @@ https://colab.research.google.com/drive/1VLG8e7YSEwypxU-noRNhsv5dW4NfTGce
 **Modeling**
  * RNN, Seq2Seq 자료조사
  * GPT-2를 이용한 생성 모델 학습 진행 중
- 
+
 **데이터 변형**
  * Translation (한글 →  다른 나라 언어 →  한글)
   * Google Translation API 이용
@@ -81,7 +83,7 @@ https://colab.research.google.com/drive/1VLG8e7YSEwypxU-noRNhsv5dW4NfTGce
  : 사용자의 데이터를 학습해서 Word2Vec 모델로 반환해주는 코드
  * **word2vec_train_and_save.py**
  : Word2vec 모델을 이용해 받아낸 단어 별 유의어를 문장 내 모든 명사에 적용시켜 문장을 변형해주는 코드
- 
+
 ## 참고 문헌
 
 **NLP**
